@@ -1,11 +1,14 @@
-document.getElementById("message").innerHTML=
-`
-✨ Ternyata itu foto kita berdua 🥺❤️
-<br><br>
-Karena bestie ulang tahun,
-jadi ini ucapan dariku 🌸
-`;
+#board{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:4px;
+    width:95vw;
+    max-width:330px;
+}
 
-setTimeout(()=>{
-    window.location.href="letter.html";
-},4000);
+.piece{
+    width:100%;
+    aspect-ratio:1/1;
+    border-radius:10px;
+    object-fit:cover;
+}
