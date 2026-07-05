@@ -9,7 +9,6 @@ let musicStarted = false;
 
 function showPopup(text){
     popup.innerText = text;
-
     popup.style.top = "20px";
 
     setTimeout(()=>{
@@ -30,17 +29,20 @@ btn.addEventListener("click",()=>{
         clickCount++;
     }
 
-    else if(clickCount === 1){
+    else{
 
         if(!musicStarted){
-            showPopup("🎵 Sebelum lanjut, nyalain musik dulu ya~");
-            musicBtn.style.display = "block";
-        }
-        else{
-            window.location.href="puzzle.html";
-        }
 
+            showPopup("🎵 Sebelum lanjut, nyalain musik dulu ya~");
+            musicBtn.style.display="block";
+
+        }else{
+
+            window.location.href="puzzle.html";
+
+        }
     }
+
 });
 
 musicBtn.addEventListener("click",()=>{
@@ -49,9 +51,10 @@ musicBtn.addEventListener("click",()=>{
 
     musicStarted = true;
 
-    musicBtn.style.display = "none";
+    musicBtn.style.display="none";
 
-    btn.innerHTML = "🧩 Mulai Puzzle";
+    btn.innerHTML="🧩 Mulai Puzzle";
 
     showPopup("✨ Nah gitu dong~");
+
 });
