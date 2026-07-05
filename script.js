@@ -10,14 +10,12 @@ let musicPlayed = false;
 
 btn.addEventListener("click", function(){
 
-    // Klik pertama
     if(clickCount === 0){
         btn.style.transform = "translateX(180px)";
         message.innerText = "Eits, belum bisa 🤭";
         clickCount++;
     }
 
-    // Klik kedua
     else if(clickCount === 1){
         btn.style.transform = "translateX(-180px)";
         message.innerText = "Pencet musiknya dulu ya 🎵";
@@ -25,25 +23,24 @@ btn.addEventListener("click", function(){
         clickCount++;
     }
 
-    // Kalau musik belum diputar jangan lanjut
     else if(clickCount === 2 && !musicPlayed){
         message.innerText = "Musiknya dulu ya bestie 🎵";
     }
 
-    // Klik setelah musik diputar
     else if(clickCount === 2 && musicPlayed){
         btn.style.transform = "translateX(80px)";
         message.innerText = "Hehehe sabar ya bestie 🤭";
         clickCount++;
     }
 
-    // Lanjut puzzle
     else{
-        message.innerText = "🧩 Lanjut ke puzzle...";
+        window.location.href = "puzzle.html";
     }
+
 });
 
 musicBtn.addEventListener("click", function(){
+
     bgMusic.play();
 
     musicPlayed = true;
@@ -51,4 +48,5 @@ musicBtn.addEventListener("click", function(){
     musicBtn.style.display = "none";
 
     message.innerText = "Nah gitu dong, sekarang lanjut 😌✨";
+
 });
