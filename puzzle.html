@@ -6,6 +6,7 @@
 <title>Puzzle Untuk Zella 🌸</title>
 
 <style>
+
 body{
     margin:0;
     padding:20px;
@@ -14,26 +15,27 @@ body{
     display:flex;
     flex-direction:column;
     align-items:center;
+    justify-content:center;
     font-family:Arial,sans-serif;
 }
 
 h1{
     color:#d45c8a;
     text-align:center;
+    font-size:30px;
     margin-bottom:25px;
-    font-size:32px;
 }
 
 #board{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:8px;
+    gap:6px;
     width:min(92vw,420px);
 }
 
 .piece{
     width:100%;
-    aspect-ratio:3/4;
+    aspect-ratio:201/212;
     object-fit:cover;
     border-radius:14px;
     cursor:pointer;
@@ -52,6 +54,7 @@ h1{
     color:#d45c8a;
     font-size:20px;
 }
+
 </style>
 </head>
 
@@ -84,6 +87,7 @@ h1{
 <script>
 
 const pieces = document.querySelectorAll(".piece");
+
 let firstPiece = null;
 
 pieces.forEach(piece => {
@@ -97,16 +101,17 @@ pieces.forEach(piece => {
 
         }else{
 
-            let temp = firstPiece.src;
+            const temp = firstPiece.src;
+
             firstPiece.src = this.src;
             this.src = temp;
 
             firstPiece.classList.remove("selected");
+
             firstPiece = null;
 
             checkPuzzle();
         }
-
     });
 
 });
@@ -116,4 +121,43 @@ function checkPuzzle(){
     const correctOrder = [
         "puzzle_1.jpg",
         "puzzle_2.jpg",
-       
+        "puzzle_3.jpg",
+        "puzzle_4.jpg",
+        "puzzle_5.jpg",
+        "puzzle_6.jpg",
+        "puzzle_7.jpg",
+        "puzzle_8.jpg",
+        "puzzle_9.jpg",
+        "puzzle_10.jpg",
+        "puzzle_11.jpg",
+        "puzzle_12.jpg"
+    ];
+
+    let solved = true;
+
+    pieces.forEach((piece,index)=>{
+
+        if(!piece.src.includes(correctOrder[index])){
+            solved = false;
+        }
+
+    });
+
+    if(solved){
+
+        document.getElementById("message").innerHTML = `
+            <h2>🥺 Ternyata itu foto kita berdua ❤️</h2>
+            <p>Karena bestie ulang tahun, jadi ini ucapan dariku 🌸</p>
+        `;
+
+        setTimeout(()=>{
+            window.location.href = "letter.html";
+        },3000);
+
+    }
+}
+
+</script>
+
+</body>
+</html>
