@@ -12,52 +12,49 @@ body{
     margin:0;
     padding:20px;
     min-height:100vh;
-    background:linear-gradient(180deg,#fff0f5,#ffe4ec,#fff8fb);
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    background:linear-gradient(180deg,#fff0f5,#ffe4ec,#fff8fb);
     font-family:Arial,sans-serif;
     box-sizing:border-box;
 }
 
 h1{
     color:#d45c8a;
-    font-size:24px;
     text-align:center;
-    margin-bottom:25px;
+    margin-bottom:20px;
+    font-size:24px;
 }
 
 #board{
-    width:100%;
-    max-width:360px;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:6px;
+    gap:5px;
+    width:95vw;
+    max-width:360px;
 }
 
 .piece{
     width:100%;
-    height:90px;
+    height:100px;
     object-fit:cover;
     border-radius:12px;
     cursor:pointer;
-    transition:0.2s;
+    transition:.2s;
 }
 
 .selected{
     outline:4px solid #ff7fb3;
-    transform:scale(1.05);
+    transform:scale(1.03);
 }
 
 #message{
     margin-top:25px;
     text-align:center;
     color:#d45c8a;
-}
-
-#message h2{
-    margin-bottom:10px;
+    font-size:18px;
 }
 
 </style>
@@ -65,7 +62,9 @@ h1{
 
 <body>
 
-<h1>🧩 Hmm... ini foto apa ya? 🤔</h1>
+<h1>
+🧩 Hmm... ini foto apa ya? 🤔
+</h1>
 
 <div id="board">
 
@@ -105,7 +104,8 @@ pieces.forEach(piece => {
 
             this.classList.add("selected");
 
-        }else{
+        }
+        else{
 
             let temp = firstPiece.src;
 
@@ -155,8 +155,8 @@ function checkPuzzle(){
     if(solved){
 
         document.getElementById("message").innerHTML = `
-            <h2>🥺 Ternyata itu foto kita berdua ❤️</h2>
-            <p>Karena bestie ulang tahun, jadi ini ucapan dariku 🌸</p>
+        <h2>🥺 Ternyata itu foto kita berdua ❤️</h2>
+        <p>Karena bestie ulang tahun, jadi ini ucapan dariku 🌸</p>
         `;
 
         setTimeout(()=>{
