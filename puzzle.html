@@ -1,93 +1,6 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Puzzle Untuk Zella 🌸</title>
-
-<style>
-
-body{
-    margin:0;
-    padding:20px;
-    min-height:100vh;
-    background:linear-gradient(180deg,#fff0f5,#ffe4ec,#fff8fb);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    font-family:Arial,sans-serif;
-}
-
-h1{
-    color:#d45c8a;
-    text-align:center;
-    font-size:30px;
-    margin-bottom:25px;
-}
-
-#board{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:6px;
-    width:min(92vw,420px);
-}
-
-.piece{
-    width:100%;
-    aspect-ratio:201/212;
-    object-fit:cover;
-    border-radius:14px;
-    cursor:pointer;
-    transition:0.2s;
-    box-shadow:0 4px 12px rgba(0,0,0,0.12);
-}
-
-.selected{
-    outline:4px solid #ff7fb3;
-    transform:scale(1.05);
-}
-
-#message{
-    margin-top:25px;
-    text-align:center;
-    color:#d45c8a;
-    font-size:20px;
-}
-
-</style>
-</head>
-
-<body>
-
-<h1>🧩 Hmm... ini foto apa ya? 🤔</h1>
-
-<div id="board">
-
-<img src="puzzle_7.jpg" class="piece">
-<img src="puzzle_1.jpg" class="piece">
-<img src="puzzle_10.jpg" class="piece">
-
-<img src="puzzle_2.jpg" class="piece">
-<img src="puzzle_12.jpg" class="piece">
-<img src="puzzle_5.jpg" class="piece">
-
-<img src="puzzle_8.jpg" class="piece">
-<img src="puzzle_3.jpg" class="piece">
-<img src="puzzle_11.jpg" class="piece">
-
-<img src="puzzle_4.jpg" class="piece">
-<img src="puzzle_9.jpg" class="piece">
-<img src="puzzle_6.jpg" class="piece">
-
-</div>
-
-<div id="message"></div>
-
 <script>
 
 const pieces = document.querySelectorAll(".piece");
-
 let firstPiece = null;
 
 pieces.forEach(piece => {
@@ -107,7 +20,6 @@ pieces.forEach(piece => {
             this.src = temp;
 
             firstPiece.classList.remove("selected");
-
             firstPiece = null;
 
             checkPuzzle();
@@ -145,19 +57,20 @@ function checkPuzzle(){
 
     if(solved){
 
+        document.getElementById("board").innerHTML = `
+            <img src="photobaru.jpg.jpeg" id="finalPhoto">
+        `;
+
         document.getElementById("message").innerHTML = `
             <h2>🥺 Ternyata itu foto kita berdua ❤️</h2>
-            <p>Karena bestie ulang tahun, jadi ini ucapan dariku 🌸</p>
         `;
 
         setTimeout(()=>{
             window.location.href = "letter.html";
-        },3000);
+        },5000);
 
     }
+
 }
 
 </script>
-
-</body>
-</html>
