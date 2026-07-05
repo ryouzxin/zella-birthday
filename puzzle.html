@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puzzle Untuk Zella 🌸</title>
+
+<style>
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(180deg,#ffe8f1,#ffd6e7,#fff5f8);
+}
+
+h1{
+    color:#d45c8a;
+    margin-bottom:30px;
+}
+
+#photo{
+    width:280px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    margin-bottom:25px;
+}
+
+button{
+    padding:16px 35px;
+    border:none;
+    border-radius:40px;
+    font-size:20px;
+    background:#ff8db4;
+    color:white;
+    cursor:pointer;
+}
+
+#result{
+    margin-top:25px;
+    font-size:22px;
+    color:#d45c8a;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Hmm... ini foto apa ya? 🤔</h1>
+
+<img src="photo.jpg.jpeg" id="photo">
+
+<button id="finishBtn">
+🧩 Selesai Menyusun Puzzle
+</button>
+
+<p id="result"></p>
+
+<script>
+
+document.getElementById("finishBtn").addEventListener("click",function(){
+
+    document.getElementById("result").innerHTML =
+    "✨ Wowww, ternyata foto kita berdua 🥺❤️ <br><br> Karena bestie ulang tahun, jadi ini ucapan dariku 🌸";
+
+    setTimeout(function(){
+        window.location.href="letter.html";
+    },4000);
+
+});
+
+</script>
+
+</body>
+</html>
