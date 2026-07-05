@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💌 Untuk Zella 💌</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:20px;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(180deg,#fff0f5,#ffe4ec,#fff8fb);
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+.letter{
+    max-width:420px;
+    width:100%;
+    background:rgba(255,255,255,.9);
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    animation:fadeUp 1.2s ease;
+}
+
+h1{
+    color:#ff5d9e;
+}
+
+p{
+    color:#666;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.sakura{
+    position:fixed;
+    top:-20px;
+    font-size:24px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-20px) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="letter">
+
+<h1>🌸 Happy Birthday Zella 🌸</h1>
+
+<p>
+Nggak kerasa ya amzay, sudah 3 tahun kita bersama.
+</p>
+
+<p>
+Jujur aku agak bingung mau ngetik apa,
+tapi aku, Ica yang kiyowo ini,
+punya banyak harapan baik buat kamu.
+</p>
+
+<p>
+Semoga dijauhkan dari hal-hal buruk,
+dilancarkan rezekinya,
+disehatkan jasmaninya,
+dan menjadi anak baik kayak aku 🖤
+</p>
+
+<p>
+Semoga dilancarkan juga jodohnya
+sama Ederik dan Immo 😉💞
+</p>
+
+<p>
+Terima kasih sudah menemani selama ini.
+</p>
+
+<h2>
+Happy Birthday, Zella 🌷✨
+</h2>
+
+</div>
+
+<script>
+
+for(let i=0;i<20;i++){
+
+    const sakura=document.createElement("div");
+
+    sakura.innerHTML="🌸";
+
+    sakura.className="sakura";
+
+    sakura.style.left=Math.random()*100+"vw";
+
+    sakura.style.animationDuration=
+        (5+Math.random()*5)+"s";
+
+    sakura.style.opacity=Math.random();
+
+    document.body.appendChild(sakura);
+
+}
+
+</script>
+
+</body>
+</html>
