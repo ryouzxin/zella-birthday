@@ -1,145 +1,15 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Puzzle Untuk Zella 🌸</title>
-
-<style>
-body{
-    margin:0;
-    padding:20px;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(#fff0f5,#ffe4ec,#fff8fb);
-}
-
-h1{
-    color:#d45c8a;
-    text-align:center;
-}
-
 #board{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:5px;
+    grid-template-rows:repeat(4,1fr);
+    gap:4px;
     width:95vw;
-    max-width:330px;
+    max-width:360px;
 }
 
 .piece{
     width:100%;
     aspect-ratio:1/1;
-    border-radius:10px;
     object-fit:cover;
-    cursor:pointer;
+    border-radius:10px;
 }
-
-.selected{
-    outline:4px solid #ff6ea8;
-}
-
-#message{
-    margin-top:20px;
-    color:#d45c8a;
-    text-align:center;
-}
-</style>
-</head>
-
-<body>
-
-<h1>Hmm... ini foto apa ya? 🤔</h1>
-
-<div id="board">
-
-<img src="tile_1_2.jpg" class="piece">
-<img src="tile_0_0.jpg" class="piece">
-<img src="tile_2_1.jpg" class="piece">
-
-<img src="tile_0_1.jpg" class="piece">
-<img src="tile_2_2.jpg" class="piece">
-<img src="tile_1_0.jpg" class="piece">
-
-<img src="tile_1_1.jpg" class="piece">
-<img src="tile_2_0.jpg" class="piece">
-<img src="tile_0_2.jpg" class="piece">
-
-</div>
-
-<div id="message"></div>
-
-<script>
-
-const pieces = document.querySelectorAll(".piece");
-
-let firstPiece = null;
-
-pieces.forEach(piece => {
-
-    piece.addEventListener("click", function(){
-
-        if(firstPiece === null){
-            firstPiece = this;
-            this.classList.add("selected");
-        }
-        else{
-
-            let temp = firstPiece.src;
-            firstPiece.src = this.src;
-            this.src = temp;
-
-            firstPiece.classList.remove("selected");
-            firstPiece = null;
-
-            checkPuzzle();
-        }
-
-    });
-
-});
-
-function checkPuzzle(){
-
-    const correctOrder = [
-        "tile_0_0.jpg",
-        "tile_0_1.jpg",
-        "tile_0_2.jpg",
-        "tile_1_0.jpg",
-        "tile_1_1.jpg",
-        "tile_1_2.jpg",
-        "tile_2_0.jpg",
-        "tile_2_1.jpg",
-        "tile_2_2.jpg"
-    ];
-
-    let solved = true;
-
-    pieces.forEach((piece,index)=>{
-        if(!piece.src.includes(correctOrder[index])){
-            solved = false;
-        }
-    });
-
-    if(solved){
-
-        document.getElementById("message").innerHTML = `
-        ✨ Ternyata itu foto kita berdua 🥺❤️
-        <br><br>
-        Karena bestie ulang tahun, jadi ini ucapan dariku 🌸
-        `;
-
-        setTimeout(()=>{
-            window.location.href="letter.html";
-        },4000);
-
-    }
-}
-</script>
-
-</body>
-</html>
