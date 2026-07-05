@@ -1,12 +1,26 @@
-document.addEventListener('click',e=>{
- const r=document.createElement('div');
- r.className='ripple';
- r.style.left=e.clientX+'px';
- r.style.top=e.clientY+'px';
- document.body.appendChild(r);
- setTimeout(()=>r.remove(),1000);
-});
+let clickCount = 0;
+const btn = document.getElementById("openBtn");
 
-document.getElementById('openBtn').addEventListener('click', function() {
-    alert('Tombol berhasil ditekan!');
+btn.addEventListener("click", function () {
+
+    clickCount++;
+
+    if (clickCount === 1) {
+        btn.style.transform = "translateX(200px)";
+        alert("Eits, belum bisa 🤭");
+    }
+
+    else if (clickCount === 2) {
+        btn.style.transform = "translateX(-200px)";
+        alert("Sebelum lanjut, nyalain musik dulu ya 🎵");
+    }
+
+    else if (clickCount === 3) {
+        btn.style.transform = "translateX(100px)";
+        alert("Hehehe sabar ya bestie 🤭");
+    }
+
+    else {
+        window.location.href = "puzzle.html";
+    }
 });
