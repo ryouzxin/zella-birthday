@@ -21,6 +21,6 @@ btn.addEventListener("click", function () {
     }
 
     else {
-        window.location.href = "puzzle.html";
+alert("Lanjut ke puzzle 🧩");
     }
 });
