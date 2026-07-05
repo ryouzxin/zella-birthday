@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🌸 Happy Birthday Zella 🌸</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Happy Birthday Zella 🌸</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="center-card">
-<h1>🌸 Happy Birthday Zella 🌸</h1>
-<button id="openBtn">💌 Open The Letter</button>
-</div>
 
-<div id="ripple-container"></div>
+    <div class="center-card">
 
-<script src="script.js"></script>
+        <h1>🌸 Happy Birthday Zella 🌸</h1>
+
+        <p id="message"></p>
+
+        <button id="openBtn">
+            💌 Open The Letter
+        </button>
+
+        <br><br>
+
+        <button id="musicBtn" style="display:none;">
+            🎵 Putar Musik
+        </button>
+
+        <audio id="bgMusic" loop>
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
+
+    <div id="ripple-container"></div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
