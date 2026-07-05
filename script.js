@@ -1,52 +1,53 @@
 let clickCount = 0;
 
 const btn = document.getElementById("openBtn");
-const message = document.getElementById("message");
-
 const musicBtn = document.getElementById("musicBtn");
 const bgMusic = document.getElementById("bgMusic");
+const popup = document.getElementById("popup");
 
-let musicPlayed = false;
+let musicStarted = false;
 
-btn.addEventListener("click", function(){
+function showPopup(text){
+    popup.innerText = text;
+    popup.style.top = "20px";
 
+    setTimeout(()=>{
+        popup.style.top = "-100px";
+    },2000);
+}
+
+btn.addEventListener("click",()=>{
+
+    // klik pertama
     if(clickCount === 0){
         btn.style.transform = "translateX(180px)";
-        message.innerText = "Eits, belum bisa 🤭";
+        showPopup("🤭 Eits, belum dulu dong~");
         clickCount++;
     }
 
+    // klik kedua
     else if(clickCount === 1){
-        btn.style.transform = "translateX(-180px)";
-        message.innerText = "Pencet musiknya dulu ya 🎵";
-        musicBtn.style.display = "inline-block";
-        clickCount++;
-    }
 
-    else if(clickCount === 2 && !musicPlayed){
-        message.innerText = "Musiknya dulu ya bestie 🎵";
-    }
-
-    else if(clickCount === 2 && musicPlayed){
-        btn.style.transform = "translateX(80px)";
-        message.innerText = "Hehehe sabar ya bestie 🤭";
-        clickCount++;
-    }
-
-    else{
-        window.location.href = "puzzle.html";
+        if(!musicStarted){
+            btn.style.transform = "translateX(-180px)";
+            showPopup("🎵 Sebelum lanjut, nyalain musik dulu ya~");
+            musicBtn.style.display="inline-block";
+        }
+        else{
+            window.location.href="puzzle.html";
+        }
     }
 
 });
 
-musicBtn.addEventListener("click", function(){
+musicBtn.addEventListener("click",()=>{
 
     bgMusic.play();
 
-    musicPlayed = true;
+    musicStarted = true;
 
-    musicBtn.style.display = "none";
+    musicBtn.style.display="none";
 
-    message.innerText = "Nah gitu dong, sekarang lanjut 😌✨";
+    showPopup("✨ Nah gitu dong~");
 
 });
