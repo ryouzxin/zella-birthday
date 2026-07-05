@@ -20,30 +20,30 @@ body{
 
 h1{
     color:#d45c8a;
-    margin-bottom:30px;
 }
 
-#photo{
-    width:280px;
+img{
+    width:300px;
     border-radius:25px;
+    margin:20px 0;
     box-shadow:0 10px 30px rgba(0,0,0,.15);
-    margin-bottom:25px;
 }
 
 button{
-    padding:16px 35px;
+    padding:15px 30px;
     border:none;
-    border-radius:40px;
-    font-size:20px;
+    border-radius:50px;
     background:#ff8db4;
     color:white;
+    font-size:20px;
     cursor:pointer;
 }
 
 #result{
-    margin-top:25px;
-    font-size:22px;
+    margin-top:20px;
     color:#d45c8a;
+    font-size:22px;
+    text-align:center;
 }
 
 </style>
@@ -53,24 +53,23 @@ button{
 
 <h1>Hmm... ini foto apa ya? 🤔</h1>
 
-<img src="photo.jpg.jpeg" id="photo">
+<img src="photobaru.jpg.jpeg">
 
 <button id="finishBtn">
 🧩 Selesai Menyusun Puzzle
 </button>
 
-<p id="result"></p>
+<div id="result"></div>
 
 <script>
 
 document.getElementById("finishBtn").addEventListener("click",function(){
 
-    document.getElementById("result").innerHTML =
-    "✨ Wowww, ternyata foto kita berdua 🥺❤️ <br><br> Karena bestie ulang tahun, jadi ini ucapan dariku 🌸";
-
-    setTimeout(function(){
-        window.location.href="letter.html";
-    },4000);
+document.getElementById("result").innerHTML=
+`
+✨ Wowww, ternyata foto kita berdua 🥺❤️ <br><br>
+Karena bestie ulang tahun, jadi ini ucapan dariku 🌸
+`;
 
 });
 
