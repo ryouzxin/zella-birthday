@@ -8,11 +8,11 @@ const popup = document.getElementById("popup");
 let musicStarted = false;
 
 function showPopup(text){
-    popup.innerText = text;
-    popup.style.top = "20px";
+    popup.innerText=text;
+    popup.style.top="20px";
 
     setTimeout(()=>{
-        popup.style.top = "-100px";
+        popup.style.top="-100px";
     },2500);
 }
 
@@ -24,7 +24,7 @@ btn.addEventListener("click",()=>{
         btn.classList.remove("bounce");
     },450);
 
-    if(clickCount === 0){
+    if(clickCount===0){
         showPopup("🤭 Eits, belum dulu dong~");
         clickCount++;
     }
@@ -32,24 +32,20 @@ btn.addEventListener("click",()=>{
     else{
 
         if(!musicStarted){
-
             showPopup("🎵 Sebelum lanjut, nyalain musik dulu ya~");
             musicBtn.style.display="block";
-
-        }else{
-
+        }
+        else{
             window.location.href="puzzle.html";
-
         }
     }
-
 });
 
 musicBtn.addEventListener("click",()=>{
 
     bgMusic.play();
 
-    musicStarted = true;
+    musicStarted=true;
 
     musicBtn.style.display="none";
 
