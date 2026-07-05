@@ -7,8 +7,6 @@ document.addEventListener('click',e=>{
  setTimeout(()=>r.remove(),1000);
 });
 
-const btn = document.getElementById('openBtn');
-
-btn.addEventListener('click',function(){
-    alert("Tombol berhasil ditekan! 🎉");
+document.getElementById('openBtn').addEventListener('click', function() {
+    alert('Tombol berhasil ditekan!');
 });
