@@ -18,20 +18,16 @@ function showPopup(text){
 
 btn.addEventListener("click",()=>{
 
-    // klik pertama
     if(clickCount === 0){
-        btn.style.transform = "translateX(180px)";
         showPopup("🤭 Eits, belum dulu dong~");
         clickCount++;
     }
 
-    // klik kedua
     else if(clickCount === 1){
 
         if(!musicStarted){
-            btn.style.transform = "translateX(-180px)";
             showPopup("🎵 Sebelum lanjut, nyalain musik dulu ya~");
-            musicBtn.style.display="inline-block";
+            musicBtn.style.display="block";
         }
         else{
             window.location.href="puzzle.html";
