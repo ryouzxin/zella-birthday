@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Puzzle Untuk Zella 🌸</title>
 
 <style>
-
 body{
     margin:0;
     padding:20px;
@@ -15,57 +13,51 @@ body{
     background:linear-gradient(180deg,#fff0f5,#ffe4ec,#fff8fb);
     display:flex;
     flex-direction:column;
-    justify-content:center;
     align-items:center;
     font-family:Arial,sans-serif;
-    box-sizing:border-box;
 }
 
 h1{
     color:#d45c8a;
-    font-size:24px;
     text-align:center;
     margin-bottom:25px;
+    font-size:32px;
 }
 
 #board{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    grid-template-rows:repeat(4,1fr);
-    gap:5px;
-    width:95vw;
-    max-width:360px;
+    gap:8px;
+    width:min(92vw,420px);
 }
 
 .piece{
     width:100%;
-    height:90px;
+    aspect-ratio:3/4;
     object-fit:cover;
-    border-radius:12px;
+    border-radius:14px;
     cursor:pointer;
     transition:0.2s;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
 }
 
 .selected{
     outline:4px solid #ff7fb3;
-    transform:scale(1.03);
+    transform:scale(1.05);
 }
 
 #message{
     margin-top:25px;
     text-align:center;
     color:#d45c8a;
-    font-size:18px;
+    font-size:20px;
 }
-
 </style>
 </head>
 
 <body>
 
-<h1>
-🧩 Hmm... ini foto apa ya? 🤔
-</h1>
+<h1>🧩 Hmm... ini foto apa ya? 🤔</h1>
 
 <div id="board">
 
@@ -92,7 +84,6 @@ h1{
 <script>
 
 const pieces = document.querySelectorAll(".piece");
-
 let firstPiece = null;
 
 pieces.forEach(piece => {
@@ -107,16 +98,13 @@ pieces.forEach(piece => {
         }else{
 
             let temp = firstPiece.src;
-
             firstPiece.src = this.src;
             this.src = temp;
 
             firstPiece.classList.remove("selected");
-
             firstPiece = null;
 
             checkPuzzle();
-
         }
 
     });
@@ -128,44 +116,4 @@ function checkPuzzle(){
     const correctOrder = [
         "puzzle_1.jpg",
         "puzzle_2.jpg",
-        "puzzle_3.jpg",
-        "puzzle_4.jpg",
-        "puzzle_5.jpg",
-        "puzzle_6.jpg",
-        "puzzle_7.jpg",
-        "puzzle_8.jpg",
-        "puzzle_9.jpg",
-        "puzzle_10.jpg",
-        "puzzle_11.jpg",
-        "puzzle_12.jpg"
-    ];
-
-    let solved = true;
-
-    pieces.forEach((piece,index)=>{
-
-        if(!piece.src.includes(correctOrder[index])){
-            solved = false;
-        }
-
-    });
-
-    if(solved){
-
-        document.getElementById("message").innerHTML = `
-            <h2>🥺 Ternyata itu foto kita berdua ❤️</h2>
-            <p>Karena bestie ulang tahun, jadi ini ucapan dariku 🌸</p>
-        `;
-
-        setTimeout(()=>{
-            window.location.href = "letter.html";
-        },4000);
-
-    }
-
-}
-
-</script>
-
-</body>
-</html>
+       
